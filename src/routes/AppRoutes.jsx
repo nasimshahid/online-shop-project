@@ -29,6 +29,8 @@ import AdminRoute from './AdminRoute'
 import SellerRoute from './SellerRoute'
 import DeliveryRoute from './DeliveryRoute'
 import User from '../pages/admin/User'
+import AddCategory from '../pages/admin/AddCategory'
+import CategoryList from '../pages/admin/CategoryList'
 
 const AppRoutes = () => {
   const auth = useSelector(state => state.auth)
@@ -68,7 +70,28 @@ const AppRoutes = () => {
             </AdminRoute>
           } 
         />
-
+        
+    <Route 
+          path="/admin/categories" 
+          element={
+            <AdminRoute isAdmin={userRole === 'admin'}>  
+              <AdminLayout>
+                <AddCategory />
+              </AdminLayout>
+            </AdminRoute>
+          } 
+        />
+             
+    <Route 
+          path="/admin/categoriesList" 
+          element={
+            <AdminRoute isAdmin={userRole === 'admin'}>  
+              <AdminLayout>
+                <CategoryList />
+              </AdminLayout>
+            </AdminRoute>
+          } 
+        />
         {/* Seller Routes */}
         <Route 
           path="/seller/dashboard" 

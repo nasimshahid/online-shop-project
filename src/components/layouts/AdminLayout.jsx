@@ -22,6 +22,8 @@ export default function AdminLayout({ children }) {
           <li onClick={() => navigate('/admin/users')}>Users</li>
 
           <li>Products</li>
+          <li onClick={() => navigate('/admin/categories')}>Add Categories</li>
+                    <li onClick={() => navigate('/admin/categoriesList')}>View Categories</li>
 
           <li>Orders</li>
 
